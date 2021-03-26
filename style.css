@@ -1,0 +1,174 @@
+:root {
+    --box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+    --transition: all .3s linear;
+    --facebook: #3b5998;
+    --twitter: #55acee;
+    --instagram: #833AB4;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #fff;
+}
+
+.container {
+    width: 1000px;
+    max-width: 100%;
+    height: 250px;
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    margin: 30px auto;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .title {
+    color: #FF8800;
+    font-size: 25px;
+}
+
+.container-buttons,
+.container-buttons-two {
+    position: absolute;
+    bottom: 20px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, .14);
+}
+
+.container-buttons-two {
+    right: 20px;
+}
+
+.container-buttons {
+    left: 20px;
+}
+
+.list-options .cont-icon,
+.list-options .cont-icon-two {
+    z-index: 1;
+    transition: all 450ms linear;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0;
+    transform: rotate(-360deg);
+}
+
+.list-options .cont-icon:hover,
+.list-options .cont-icon-two:hover {
+    background-color: #fff;
+    color: rgba(0, 0, 0, .87);
+    transition: all 450ms linear;
+}
+
+.btn_check,
+.btn_open,
+.list-options .cont-icon,
+.list-options .cont-icon-two {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    background-color: #fff;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.btn_open {
+    transform: rotate(0deg);
+    transition: transform 450ms ease;
+    z-index: 2;
+    background-color: #9c27b0;
+    color: #fff;
+    box-shadow: var(--box-shadow);
+}
+
+.btn_check {
+    opacity: 0;
+    z-index: 3;
+}
+
+.btn_check:checked~.btn_open~.list-options .cont-icon {
+    box-shadow: var(--box-shadow);
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.btn_check:checked~.btn_open~.list-options .cont-icon:first-child {
+    margin-top: -155px;
+}
+
+.btn_check:checked~.btn_open~.list-options .cont-icon:nth-child(2) {
+    margin-top: -105px;
+}
+
+.btn_check:checked~.btn_open~.list-options .cont-icon:last-child {
+    margin-top: -55px;
+}
+
+.btn_check:checked~.btn_open {
+    transform: rotate(360deg);
+}
+
+
+/* Boton dos */
+
+.container-buttons-two .btn_open {
+    background-color: #0d47a1;
+}
+
+.list-options .cont-icon-two {
+    transform: rotate(-360deg);
+}
+
+.btn_check:checked~.btn_open~.list-options .cont-icon-two {
+    box-shadow: var(--box-shadow);
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.btn_check:checked~.btn_open~.list-options .cont-icon-two:first-child {
+    margin-top: -70px;
+}
+
+.btn_check:checked~.btn_open~.list-options .cont-icon-two:nth-child(2) {
+    margin-left: -70px;
+}
+
+.btn_check:checked~.btn_open~.list-options .cont-icon-two:last-child {
+    margin-top: -52.5px;
+    margin-left: -55px;
+}
+
+.cont-icon.facebook,
+.cont-icon-two.facebook {
+    background-color: var(--facebook);
+    transition: all 450ms linear;
+}
+
+.cont-icon.twitter,
+.cont-icon-two.twitter {
+    background-color: var(--twitter);
+    transition: all 450ms linear;
+}
+
+.cont-icon.instagram,
+.cont-icon-two.instagram {
+    background-color: var(--instagram);
+    transition: all 450ms linear;
+}
